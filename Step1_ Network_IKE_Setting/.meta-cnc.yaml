@@ -78,12 +78,12 @@ variables:
         value: sha384
       - key: sha512
         value: sha512
-  - name: ike_lifetime (hour)
+  - name: ike_lifetime
     description: ike_lifetime (hour)
     default: 
     type_hint: text
-  - name: ipsec-crypto_name
-    description: ipsec-crypto_name
+  - name: ipsec_crypto_name
+    description: ipsec_crypto_name
     default: 
     type_hint: text
   - name: ipsec_dhgroup
@@ -105,7 +105,7 @@ variables:
         value: group19
       - key: group20
         value: group20
-  - name: ipsec_lifetime (hour)
+  - name: ipsec_lifetime
     description: ipsec_lifetime (hour)
     default: 
     type_hint: text
