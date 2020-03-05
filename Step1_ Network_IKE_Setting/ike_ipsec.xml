@@ -89,7 +89,7 @@
             <ike-gateway>
               <entry name="{{ ike_gw_name }}"/>
             </ike-gateway>
-            <ipsec-crypto-profile>ipsec_crypto_name</ipsec-crypto-profile>
+            <ipsec-crypto-profile>{{ ipsec_crypto_name }}</ipsec-crypto-profile>
           </auto-key>
           <tunnel-monitor>
             <enable>no</enable>

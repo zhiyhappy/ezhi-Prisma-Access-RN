@@ -218,6 +218,6 @@ variables:
 snippets:
   - name: ike_parameters
     xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='Remote_Network_Template']/config/devices/entry[@name='localhost.localdomain']/network
-    file: ike.xml
+    file: ike_ipsec.xml
 # ---------------------------------------------------------------------
 # end of snippets section
