@@ -44,6 +44,6 @@ snippets:
     operation: get
     headers:
       header-api-key: '{{ header_api_key }}'
-      Content-Type: application/x-www-form-urlencoded
+      Content-Type: application/json
 # ---------------------------------------------------------------------
 # end of snippets section
