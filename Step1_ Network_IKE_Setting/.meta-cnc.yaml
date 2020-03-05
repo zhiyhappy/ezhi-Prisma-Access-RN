@@ -1,0 +1,223 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: Step1_ Network_IKE_Setting
+# label used for menu selection
+label: Step1_ Network_IKE_Setting
+description: This step is about the IKE setting
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: panorama-gpcs
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - ezhi-Prisma-Access-RN
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: ike_crypto_name
+    description: ike_crypto_name
+    default: 
+    type_hint: text
+  - name: ike_encryption
+    description: ike_encryption
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: des
+        value: des
+      - key: 3des
+        value: 3des
+      - key: aes-128-cbc
+        value: aes-128-cbc
+      - key: aes-192-cbc
+        value: aes-192-cbc
+      - key: aes-256-cbc
+        value: aes-256-cbc
+  - name: ike_dhgroup
+    description: ike_dhgroup
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: group1
+        value: group1
+      - key: group2
+        value: group2
+      - key: group5
+        value: group5
+      - key: group14
+        value: group14
+      - key: group19
+        value: group19
+      - key: group20
+        value: group20
+  - name: ike_hash
+    description: ike_hash
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: md5
+        value: md5
+      - key: sha1
+        value: sha1
+      - key: sha256
+        value: sha256
+      - key: sha384
+        value: sha384
+      - key: sha512
+        value: sha512
+  - name: ike_lifetime (hour)
+    description: ike_lifetime (hour)
+    default: 
+    type_hint: text
+  - name: ipsec-crypto_name
+    description: ipsec-crypto_name
+    default: 
+    type_hint: text
+  - name: ipsec_dhgroup
+    description: ipsec_dhgroup
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: no-pfs
+        value: no-pfs
+      - key: group1
+        value: group1
+      - key: group2
+        value: group2
+      - key: group5
+        value: group5
+      - key: group14
+        value: group14
+      - key: group19
+        value: group19
+      - key: group20
+        value: group20
+  - name: ipsec_lifetime (hour)
+    description: ipsec_lifetime (hour)
+    default: 
+    type_hint: text
+  - name: ipsec_esp_auth
+    description: ipsec_esp_auth
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: none
+        value: none
+      - key: md5
+        value: md5
+      - key: sha1
+        value: sha1
+      - key: sha256
+        value: sha256
+      - key: sha384
+        value: sha384
+      - key: sha512
+        value: sha512
+  - name: ipsec_esp_encryption
+    description: ipsec_esp_encryption
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: des
+        value: des
+      - key: 3des
+        value: 3des
+      - key: aes-128-cbc
+        value: aes-128-cbc
+      - key: aes-192-cbc
+        value: aes-192-cbc
+      - key: aes-256-cbc
+        value: aes-256-cbc
+      - key: aes-128-ccm
+        value: aes-128-ccm
+      - key: aes-128-gcm
+        value: aes-128-gcm
+      - key: aes-256-gcm
+        value: aes-256-gcm
+  - name: ike-gw-name
+    description: ike-gw-name
+    default: 
+    type_hint: text
+  - name: ike-gw-psk
+    description: ike-gw-psk
+    default: 
+    type_hint: text
+  - name: ikev1-profile
+    description: ikev1-profile
+    default: 
+    type_hint: text
+  - name: ikev2-profile
+    description: ikev2-profile
+    default: 
+    type_hint: text
+  - name: ike-version
+    description: ike-version
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: IKEv1 only mode
+        value: ikev1-only
+      - key: IKEv2 only mode
+        value: ikev2-only
+      - key: IKEv2 preferred mode
+        value: ikev2-preferred
+  - name: local-id
+    description: local-id
+    default: 
+    type_hint: text
+  - name: local-type
+    description: local-type
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: FQDN (Hostname)
+        value: fqdn
+      - key: IP address
+        value: ipaddr
+      - key: KEYID
+        value: keyid
+      - key: User FQDN
+        value: ufqdn
+  - name: peer-id
+    description: peer-id
+    default: 
+    type_hint: text
+  - name: peer-type
+    description: peer-type
+    default: choices
+    type_hint: dropdown
+    dd_list:
+      - key: FQDN (Hostname)
+        value: fqdn
+      - key: IP address
+        value: ipaddr
+      - key: KEYID
+        value: keyid
+      - key: User FQDN
+        value: ufqdn
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: ike_parameters
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='Remote_Network_Template']/config/devices/entry[@name='localhost.localdomain']/network
+    file: ike.xml
+# ---------------------------------------------------------------------
+# end of snippets section
