@@ -1,10 +1,10 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Step1_ Network_IKE_Setting
+name: Step1_Network_IKE&IPsec_Setting
 # label used for menu selection
-label: Step1_ Network_IKE_Setting
-description: This step is about the IKE setting
+label: Step1_Network_IKE&IPsec_Setting
+description: This step is about the IKE&IPsec setting
 
 # type of device configuration
 # common types are panorama, panos, and template
