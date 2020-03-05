@@ -82,3 +82,19 @@
         </entry>
       </gateway>
     </ike>
+    <tunnel>
+      <ipsec>
+        <entry name="{{ ike_gw_name }}">
+          <auto-key>
+            <ike-gateway>
+              <entry name="{{ ike_gw_name }}"/>
+            </ike-gateway>
+            <ipsec-crypto-profile>ipsec_crypto_name</ipsec-crypto-profile>
+          </auto-key>
+          <tunnel-monitor>
+            <enable>no</enable>
+          </tunnel-monitor>
+          <tunnel-interface>tunnel</tunnel-interface>
+        </entry>
+      </ipsec>
+    </tunnel>
