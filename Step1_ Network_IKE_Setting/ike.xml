@@ -17,7 +17,7 @@
           </entry>
         </ike-crypto-profiles>
         <ipsec-crypto-profiles>
-          <entry name="{{ ipsec-crypto_name }}">
+          <entry name="{{ ipsec_crypto_name }}">
             <dh-group>{{ ipsec_dhgroup }}</dh-group>
             <lifetime>
               <hours>{{ ipsec_lifetime }}</hours>
@@ -34,27 +34,27 @@
         </ipsec-crypto-profiles>
       </crypto-profiles>
       <gateway>
-        <entry name="{{ ike-gw-name }}">
+        <entry name="{{ ike_gw_name }}">
           <authentication>
             <pre-shared-key>
-              <key>{{ ike-gw-psk }}</key>
+              <key>{{ ike_gw_psk }}</key>
             </pre-shared-key>
           </authentication>
           <protocol>
             <ikev1>
               <dpd>
-                <enable>{{ ikev1-dpd }}</enable>
+                <enable>yes</enable>
               </dpd>
-              <ike-crypto-profile>{{ ikev1-profile }}</ike-crypto-profile>
+              <ike-crypto-profile>{{ ikev1_profile }}</ike-crypto-profile>
             </ikev1>
             <ikev2>
               <dpd>
-                <enable>{{ ikev2-dpd }}</enable>
+                <enable>yes</enable>
               </dpd>
-              <ike-crypto-profile>{{ ikev2-profile }}</ike-crypto-profile>
+              <ike-crypto-profile>{{ ikev2_profile }}</ike-crypto-profile>
               <require-cookie>no</require-cookie>
             </ikev2>
-            <version>{{ ike-version }}</version>
+            <version>{{ ike_version }}</version>
           </protocol>
           <protocol-common>
             <nat-traversal>
@@ -72,12 +72,12 @@
             <dynamic/>
           </peer-address>
           <local-id>
-            <id>{{ local-id }}</id>
-            <type>{{ local-type }}</type>
+            <id>{{ local_id }}</id>
+            <type>{{ local_type }}</type>
           </local-id>
           <peer-id>
-            <id>{{ peer-id }}</id>
-            <type>{{ peer-type }}</type>
+            <id>{{ peer_id }}</id>
+            <type>{{ peer_type }}</type>
           </peer-id>
         </entry>
       </gateway>

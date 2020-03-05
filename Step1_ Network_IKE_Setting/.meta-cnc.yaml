@@ -79,7 +79,7 @@ variables:
       - key: sha512
         value: sha512
   - name: ike_lifetime
-    description: ike_lifetime (hour)
+    description: ike_lifetime(hour)
     default: 
     type_hint: text
   - name: ipsec_crypto_name
@@ -106,7 +106,7 @@ variables:
       - key: group20
         value: group20
   - name: ipsec_lifetime
-    description: ipsec_lifetime (hour)
+    description: ipsec_lifetime(hour)
     default: 
     type_hint: text
   - name: ipsec_esp_auth
@@ -147,24 +147,24 @@ variables:
         value: aes-128-gcm
       - key: aes-256-gcm
         value: aes-256-gcm
-  - name: ike-gw-name
-    description: ike-gw-name
+  - name: ike_gw_name
+    description: ike_gw_name
     default: 
     type_hint: text
-  - name: ike-gw-psk
-    description: ike-gw-psk
+  - name: ike_gw_psk
+    description: ike_gw_psk
     default: 
     type_hint: text
-  - name: ikev1-profile
-    description: ikev1-profile
+  - name: ikev1_profile
+    description: ikev1_profile
     default: 
     type_hint: text
-  - name: ikev2-profile
-    description: ikev2-profile
+  - name: ikev2_profile
+    description: ikev2_profile
     default: 
     type_hint: text
-  - name: ike-version
-    description: ike-version
+  - name: ike_version
+    description: ike_version
     default: choices
     type_hint: dropdown
     dd_list:
@@ -174,12 +174,12 @@ variables:
         value: ikev2-only
       - key: IKEv2 preferred mode
         value: ikev2-preferred
-  - name: local-id
-    description: local-id
+  - name: local_id
+    description: local_id
     default: 
     type_hint: text
-  - name: local-type
-    description: local-type
+  - name: local_type
+    description: local_type
     default: choices
     type_hint: dropdown
     dd_list:
@@ -191,12 +191,12 @@ variables:
         value: keyid
       - key: User FQDN
         value: ufqdn
-  - name: peer-id
-    description: peer-id
+  - name: peer_id
+    description: peer_id
     default: 
     type_hint: text
-  - name: peer-type
-    description: peer-type
+  - name: peer_type
+    description: peer_type
     default: choices
     type_hint: dropdown
     dd_list:
