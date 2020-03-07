@@ -41,9 +41,9 @@ variables:
 snippets:
   - name: Retrive Remote Network Service IP from Prisma Access
     path: https://api.gpcloudservice.com/getAddrList/latest?fwType=gpcs_remote_network&addrType=public_ip
-    operation: GET
-    Headers:
-      header-api-key: yr0it2ejia__D9b52uxYTvaLIERbt8A5R4VHy9RJkVvuaY4EGtPY
+    operation: get
+    headers:
+      header-api-key: "yr0it2ejia__D9b52uxYTvaLIERbt8A5R4VHy9RJkVvuaY4EGtPY"
       Content-Type: application/json
 # ---------------------------------------------------------------------
 # end of snippets section
