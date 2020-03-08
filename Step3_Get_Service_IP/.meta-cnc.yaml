@@ -27,5 +27,5 @@ snippets:
     input_type: env
     output_type: json
     outputs:
-      - name: Service_IP
-        capture_value: 'output'
+      - name: captured_IP
+        capture_value: 'response.content'
