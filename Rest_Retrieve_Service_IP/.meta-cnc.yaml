@@ -1,9 +1,9 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Step3_ Retrieve_Service_IP
+name: Rest_ Retrieve_Service_IP
 # label used for menu selection
-label: Step3_ Retrieve_Service_IP
+label: Rest_ Retrieve_Service_IP
 description: This step will help to retrive the Service IP of Remote Network
 
 # type of device configuration
