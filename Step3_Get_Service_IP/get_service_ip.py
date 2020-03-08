@@ -18,5 +18,5 @@ output['output_information'] = (response.content)
 
 # print (response.content)
 
-print(json.dumps(response.content))
+# print(json.dumps(response.content))
 
