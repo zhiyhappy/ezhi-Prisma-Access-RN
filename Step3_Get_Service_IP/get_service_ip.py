@@ -13,4 +13,4 @@ params = (
 )
 
 response = requests.get('https://api.gpcloudservice.com/getAddrList/latest', headers=headers, params=params, verify=False)
-output = response.content
+print (response.content)
