@@ -1,0 +1,31 @@
+name: Step3_ Retrieve_Service_IP
+
+label: Step3_ Retrieve_Service_IP
+
+description: |
+  This skillet Step will help to retrive the Service IP of Remote Network
+
+type: python3
+
+labels:
+  collection:
+    - ezhi-Prisma-Access-RN
+
+variables:
+  - name: USERNAME
+    description: Username
+    default: admin
+    type_hint: text
+  - name: PASSWORD
+    description: Password
+    default:
+    type_hint: password
+
+snippets:
+  - name: script
+    file: get_service_ip.py
+    input_type: env
+    output_type: json
+    outputs:
+      - name: Service_IP
+        capture_value: 'output'
