@@ -1,3 +1,7 @@
+import json
+import sys
+import time
+import os
 import requests
 import json
 import urllib3
@@ -13,10 +17,13 @@ params = (
 )
 
 response = requests.get('https://api.gpcloudservice.com/getAddrList/latest', headers=headers, params=params, verify=False)
+output = dict()
 output['output_information'] = (response.content)
 
 
-# print (response.content)
+# print response.content
+print output['output_information']
 
-# print(json.dumps(response.content))
 
+
+sys.exit(0)
