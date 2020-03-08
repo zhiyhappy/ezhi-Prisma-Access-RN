@@ -18,7 +18,7 @@ params = (
 
 response = requests.get('https://api.gpcloudservice.com/getAddrList/latest', headers=headers, params=params, verify=False)
 output = dict()
-output['output_information'] = (response.content)
+output['output_information'] = response.content
 
 
 # print response.content
