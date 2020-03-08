@@ -24,6 +24,4 @@ output['output_information'] = (response.content)
 # print response.content
 print output['output_information']
 
-
-
 sys.exit(0)
