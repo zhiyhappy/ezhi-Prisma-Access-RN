@@ -28,4 +28,4 @@ snippets:
     output_type: json
     outputs:
       - name: captured_IP
-        capture_value: 'response.content'
+        capture_value: 'output_information'
