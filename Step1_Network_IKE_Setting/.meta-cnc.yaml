@@ -216,7 +216,7 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: ike_parameters
+  - name: ike_ipsec_parameters
     xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='Remote_Network_Template']/config/devices/entry[@name='localhost.localdomain']/network
     file: ike_ipsec.xml
 # ---------------------------------------------------------------------

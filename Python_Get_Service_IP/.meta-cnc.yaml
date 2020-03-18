@@ -1,9 +1,9 @@
-name: Step3_ Retrieve_Service_IP
+name: Python_Get_Service_IP
 
-label: Step3_ Retrieve_Service_IP
+label: Python_Get_Service_IP
 
-description: |
-  This skillet Step will help to retrive the Service IP of Remote Network
+description: 
+  This skillet Step will help to get the Service IP of Remote Network
 
 type: python3
 
@@ -26,6 +26,6 @@ snippets:
     file: get_service_ip.py
     input_type: env
     output_type: json
-    outputs:
-      - name: captured_IP
-        capture_value: 'output_information'
+#    outputs:
+#       - name: output_information
+#         capture_value: 'output_information'
