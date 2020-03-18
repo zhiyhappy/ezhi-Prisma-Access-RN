@@ -3,7 +3,7 @@
 # unique snippet name
 name: Step3_Retrieve_Service_IP
 # label used for menu selection
-label: Step3_Step3_Retrieve_Service_IP
+label: Step3_Retrieve_Service_IP
 description: This step will help to retrive the Service IP of Remote Network
 
 # type of device configuration
