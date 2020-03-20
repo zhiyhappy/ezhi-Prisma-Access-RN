@@ -84,7 +84,7 @@
     </ike>
     <tunnel>
       <ipsec>
-        <entry name="{{ ike_gw_name }}">
+        <entry name="{{ ipsec_tun_name }}">
           <auto-key>
             <ike-gateway>
               <entry name="{{ ike_gw_name }}"/>

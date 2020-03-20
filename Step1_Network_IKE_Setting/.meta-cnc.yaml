@@ -174,10 +174,6 @@ variables:
         value: ikev2
       - key: IKEv2 preferred mode
         value: ikev2-preferred
-  - name: local_id
-    description: Local_Identification
-    default: 
-    type_hint: text
   - name: local_type
     description: Local_Type
     default: choices
@@ -191,8 +187,8 @@ variables:
         value: keyid
       - key: User FQDN
         value: ufqdn
-  - name: peer_id
-    description: Peer_Identification
+  - name: local_id
+    description: Local_Identification
     default: 
     type_hint: text
   - name: peer_type
@@ -208,6 +204,14 @@ variables:
         value: keyid
       - key: User FQDN
         value: ufqdn
+  - name: peer_id
+    description: Peer_Identification
+    default: 
+    type_hint: text
+  - name: ipsec_tun_name
+    description: IPSec_Tunnel_Name
+    default: 
+    type_hint: text
 # ---------------------------------------------------------------------
 # end of variables section
 
