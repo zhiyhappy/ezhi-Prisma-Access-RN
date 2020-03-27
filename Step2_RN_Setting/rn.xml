@@ -9,6 +9,6 @@
           </subnets>
           <region>{{ rn_region }}</region>
           <license-type>{{ rn_license_type }}</license-type>
-          <ipsec-tunnel>{{ ipsec_tunnel_name }}</ipsec-tunnel>
+          <ipsec-tunnel>{{ ipsec_tun_name }}</ipsec-tunnel>
           <secondary-wan-enabled>no</secondary-wan-enabled>
         </entry>

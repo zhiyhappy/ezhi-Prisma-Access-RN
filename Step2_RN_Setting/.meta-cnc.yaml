@@ -35,7 +35,7 @@ variables:
     description: Remote Network Subnet
     default: 
     type_hint: cidr
-  - name: ipsec_tunnel_name
+  - name: ipsec_tun_name
     description: IPSec Tunnel Name
     default: 
     type_hint: text

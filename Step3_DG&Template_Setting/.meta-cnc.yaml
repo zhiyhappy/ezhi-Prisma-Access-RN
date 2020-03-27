@@ -1,15 +1,15 @@
 # skillet preamble information used by panhandler
 # ---------------------------------------------------------------------
 # unique snippet name
-name: Step3_Retrieve_Service_IP
+name: Step3_DG&Template_Setting
 # label used for menu selection
-label: Step3_Retrieve_Service_IP
-description: This step will help to retrive the Service IP of Remote Network
+label: Step3_DG&Template_Setting
+description: This step is about the RN Device-Group & Template setting
 
 # type of device configuration
 # common types are panorama, panos, and template
 # https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
-type: rest
+type: panorama-gpcs
 # preload static or default-based templates
 extends:
 
@@ -27,8 +27,16 @@ labels:
 # type_hint defines the form field used by panhandler
 # type_hints can be text, ip_address, or dropdown
 variables:
-  - name: header_api_key
-    description: Prisma Access API Key
+  - name: trust_zone_name
+    description: Name of Trust Zone
+    default: 
+    type_hint: text
+  - name: untrust_zone_name
+    description: Name of Unrust Zone
+    default: 
+    type_hint: text
+  - name: log_forwarding_name
+    description: Name of Log Forwarding Setting
     default: 
     type_hint: text
 # ---------------------------------------------------------------------
@@ -39,18 +47,14 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-  - name: Retrieve Remote Network Service IP from Prisma Access
-    path: https://api.gpcloudservice.com/getAddrList/latest?fwType=gpcs_remote_network&addrType=public_ip
-    operation: GET
-    headers:
-      header-api-key: '{{ header_api_key }}'
-    output_type: json
-    outputs:
-      - name: status
-        capture_pattern: $.status
-      - name: fwType
-        capture_pattern: $.result.fwType
-      - name: addrList
-        capture_pattern: $.result.addrList
+  - name: template_parameters
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='Remote_Network_Template']
+    file: template.xml
+  - name: zone_mapping
+    xpath: /config/devices/entry[@name='localhost.localdomain']/plugins/cloud_services/remote-networks
+    file: zone_mapping.xml 
+  - name: device_group_parameters
+    xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='Remote_Network_Device_Group']
+    file: device_group.xml
 # ---------------------------------------------------------------------
 # end of snippets section

@@ -1,0 +1,5 @@
+    <remote-networks>
+      <trusted-zones>
+        <member>"{{ trust_zone_name }}"</member>
+      </trusted-zones>
+    </remote-networks>

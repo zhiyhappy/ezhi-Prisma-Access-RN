@@ -1,0 +1,56 @@
+# skillet preamble information used by panhandler
+# ---------------------------------------------------------------------
+# unique snippet name
+name: Step4_Retrieve_Service_IP
+# label used for menu selection
+label: Step4_Retrieve_Service_IP
+description: This step will help to retrive the Service IP of Remote Network
+
+# type of device configuration
+# common types are panorama, panos, and template
+# https://github.com/PaloAltoNetworks/panhandler/blob/develop/docs/metadata_configuration.rst
+type: rest
+# preload static or default-based templates
+extends:
+
+# grouping of like snippets for dynamic menu creation in panhandler
+labels:
+  collection:
+    - ezhi-Prisma-Access-RN
+
+# ---------------------------------------------------------------------
+# end of preamble section
+
+# variables section
+# ---------------------------------------------------------------------
+# variables used in the configuration templates
+# type_hint defines the form field used by panhandler
+# type_hints can be text, ip_address, or dropdown
+variables:
+  - name: header_api_key
+    description: Prisma Access API Key
+    default: 
+    type_hint: text
+# ---------------------------------------------------------------------
+# end of variables section
+
+# snippets section
+# ---------------------------------------------------------------------
+# snippets used for api configuration including xpath and element as file name
+# files will load in the order listed
+snippets:
+  - name: Retrieve Remote Network Service IP from Prisma Access
+    path: https://api.gpcloudservice.com/getAddrList/latest?fwType=gpcs_remote_network&addrType=public_ip
+    operation: GET
+    headers:
+      header-api-key: '{{ header_api_key }}'
+    output_type: json
+    outputs:
+      - name: status
+        capture_pattern: $.status
+      - name: fwType
+        capture_pattern: $.result.fwType
+      - name: addrList
+        capture_pattern: $.result.addrList
+# ---------------------------------------------------------------------
+# end of snippets section

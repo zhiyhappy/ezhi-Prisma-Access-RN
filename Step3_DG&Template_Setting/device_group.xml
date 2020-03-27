@@ -1,0 +1,48 @@
+    <entry name="Remote_Network_Device_Group">
+      <description> Device Group (Use the Cloud Services plugin to edit)</description>
+      <devices/>
+      <log-settings>
+        <profiles>
+          <entry name="{{ log_forwarding_name }}">
+            <match-list>
+              <entry name="traffic-enhanced-app-logging">
+                <log-type>traffic</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>yes</send-to-panorama>
+              </entry>
+              <entry name="threat-enhanced-app-logging">
+                <log-type>threat</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>yes</send-to-panorama>
+              </entry>
+              <entry name="wildfire-enhanced-app-logging">
+                <log-type>wildfire</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>yes</send-to-panorama>
+              </entry>
+              <entry name="url-enhanced-app-logging">
+                <log-type>url</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>yes</send-to-panorama>
+              </entry>
+              <entry name="data-enhanced-app-logging">
+                <log-type>data</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>yes</send-to-panorama>
+              </entry>
+              <entry name="tunnel-enhanced-app-logging">
+                <log-type>tunnel</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>yes</send-to-panorama>
+              </entry>
+              <entry name="auth-enhanced-app-logging">
+                <log-type>auth</log-type>
+                <filter>All Logs</filter>
+                <send-to-panorama>yes</send-to-panorama>
+              </entry>
+            </match-list>
+            <enhanced-application-logging>yes</enhanced-application-logging>
+          </entry>
+        </profiles>
+      </log-settings>
+    </entry>

@@ -1,0 +1,48 @@
+    <entry name="Remote_Network_Template">
+      <settings>
+        <default-vsys>vsys1</default-vsys>
+      </settings>
+      <description> Template (Use the Cloud Services plugin to edit)</description>
+      <config>
+        <devices>
+          <entry name="localhost.localdomain">
+            <vsys>
+              <entry name="vsys1">
+                <zone>
+                  <entry name="{{ trust_zone_name }}">
+                    <network>
+                      <tap/>
+                    </network>
+                  </entry>
+                  <entry name="{{ untrust_zone_name }}">
+                    <network>
+                      <tap/>
+                    </network>
+                  </entry>
+                </zone>
+              </entry>
+            </vsys>
+          </entry>
+        </devices>
+        <shared>
+          <log-settings>
+            <system>
+              <match-list>
+                <entry name="system-gpcs-default">
+                  <filter>All Logs</filter>
+                  <send-to-panorama>yes</send-to-panorama>
+                </entry>
+              </match-list>
+            </system>
+            <userid>
+              <match-list>
+                <entry name="userid-gpcs-default">
+                  <filter>All Logs</filter>
+                  <send-to-panorama>yes</send-to-panorama>
+                </entry>
+              </match-list>
+            </userid>
+          </log-settings>
+        </shared>
+      </config>
+    </entry>
