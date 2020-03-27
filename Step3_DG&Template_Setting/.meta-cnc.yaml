@@ -47,14 +47,14 @@ variables:
 # snippets used for api configuration including xpath and element as file name
 # files will load in the order listed
 snippets:
-#  - name: template_parameters
-#    xpath: /config/devices/entry[@name='localhost.localdomain']/template/entry[@name='Remote_Network_Template']
-#    file: template.xml
+  - name: template_parameters
+    xpath: /config/devices/entry[@name='localhost.localdomain']/template
+    file: template.xml
   - name: zone_mapping
-    xpath: /config/devices/entry[@name='localhost.localdomain']/plugins/cloud_services/remote-networks
+    xpath: /config/devices/entry[@name='localhost.localdomain']/plugins/cloud_services
     file: zone_mapping.xml 
   - name: device_group_parameters
-    xpath: /config/devices/entry[@name='localhost.localdomain']/device-group/entry[@name='Remote_Network_Device_Group']
+    xpath: /config/devices/entry[@name='localhost.localdomain']/device-group
     file: device_group.xml
 # ---------------------------------------------------------------------
 # end of snippets section
